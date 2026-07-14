@@ -1,0 +1,78 @@
+{% load static %}
+<footer class="footer bg-dark text-light pt-5 pb-3 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- About Section -->
+            <div class="col-lg-4 col-md-6">
+                <h5 class="fw-bold mb-3 text-primary">
+                    <i class="bi bi-building"></i> ESTATEPRO
+                </h5>
+                <p class="text-light-emphasis">
+                    Your trusted partner in real estate. We provide comprehensive property solutions with professionalism and integrity.
+                </p>
+                <div class="social-links mt-3">
+                    <a href="#" class="text-light me-3" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-light me-3" aria-label="Twitter"><i class="bi bi-twitter-x fs-5"></i></a>
+                    <a href="#" class="text-light me-3" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-light me-3" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+                </div>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="fw-bold mb-3">Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="{% url 'core:home' %}" class="text-light-emphasis text-decoration-none">Home</a></li>
+                    <li class="mb-2"><a href="{% url 'core:about' %}" class="text-light-emphasis text-decoration-none">About Us</a></li>
+                    <li class="mb-2"><a href="{% url 'core:services' %}" class="text-light-emphasis text-decoration-none">Services</a></li>
+                    <li class="mb-2"><a href="{% url 'core:projects' %}" class="text-light-emphasis text-decoration-none">Projects</a></li>
+                </ul>
+            </div>
+            
+            <!-- Resources -->
+            <div class="col-lg-2 col-md-6">
+                <h6 class="fw-bold mb-3">Resources</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><a href="{% url 'core:testimonials' %}" class="text-light-emphasis text-decoration-none">Testimonials</a></li>
+                    <li class="mb-2"><a href="{% url 'core:faq' %}" class="text-light-emphasis text-decoration-none">FAQ</a></li>
+                    <li class="mb-2"><a href="{% url 'core:contact' %}" class="text-light-emphasis text-decoration-none">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="col-lg-4 col-md-6">
+                <h6 class="fw-bold mb-3">Contact Info</h6>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="bi bi-geo-alt-fill text-primary"></i>
+                        <span class="text-light-emphasis ms-2">123 Estate Street, City, State 12345</span>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-telephone-fill text-primary"></i>
+                        <a href="tel:+1234567890" class="text-light-emphasis text-decoration-none ms-2">+1 (234) 567-890</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-envelope-fill text-primary"></i>
+                        <a href="mailto:info@estatepro.com" class="text-light-emphasis text-decoration-none ms-2">info@estatepro.com</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="bi bi-clock-fill text-primary"></i>
+                        <span class="text-light-emphasis ms-2">Mon - Fri: 9:00 AM - 6:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <hr class="my-4 border-secondary">
+        
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="mb-0 text-light-emphasis">&copy; 2025 EstatePro. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <a href="#" class="text-light-emphasis text-decoration-none me-3">Privacy Policy</a>
+                <a href="#" class="text-light-emphasis text-decoration-none">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>

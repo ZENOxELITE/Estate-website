@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - EstatePro - Your Trusted Property Partner{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content animate-fade-in-up">
+            <h1 class="display-3 fw-bold">Find Your Dream Property</h1>
+            <p class="lead">Professional real estate services tailored to your needs. We make property transactions seamless and stress-free.</p>
+            <div class="d-flex gap-3 flex-wrap mt-4">
+                <a href="{% url 'core:services' %}" class="btn btn-primary btn-lg">Our Services</a>
+                <a href="{% url 'core:contact' %}" class="btn btn-outline-light btn-lg">Get in Touch</a>
+                <a href="https://wa.me/1234567890" class="btn btn-lg whatsapp-btn" target="_blank">
+                    <i class="bi bi-whatsapp"></i> WhatsApp Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="{% static 'images/about-estate.jpg' %}" alt="About EstatePro" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="section-title">About EstatePro</h2>
+                <p class="lead text-muted">Your trusted partner in real estate excellence since 2010.</p>
+                <p>We are a premier estate agency dedicated to providing exceptional real estate services. With over a decade of experience, our team of professionals is committed to helping you navigate the property market with confidence.</p>
+                <p>Whether you're buying your first home, selling a property, or seeking rental management services, we offer personalized solutions that meet your unique needs.</p>
+                <a href="{% url 'core:about' %}" class="btn btn-primary mt-3">Learn More About Us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Preview Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Our Services</h2>
+            <p class="lead text-muted">Comprehensive real estate solutions for all your property needs</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center">
+                    <i class="bi bi-house-check"></i>
+                    <h3>Property Buying</h3>
+                    <p class="text-muted">Expert guidance in finding and purchasing your ideal property with complete market analysis and negotiation support.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center">
+                    <i class="bi bi-cash-coin"></i>
+                    <h3>Property Selling</h3>
+                    <p class="text-muted">Maximize your property value with our strategic marketing, professional staging, and proven sales techniques.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center">
+                    <i class="bi bi-key"></i>
+                    <h3>Rental Management</h3>
+                    <p class="text-muted">Comprehensive property management services including tenant screening, maintenance, and rent collection.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <h3>Documentation</h3>
+                    <p class="text-muted">Complete assistance with legal documentation, contracts, and compliance to ensure smooth transactions.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center">
+                    <i class="bi bi-chat-dots"></i>
+                    <h3>Consultation</h3>
+                    <p class="text-muted">Professional real estate consultation to help you make informed decisions about your property investments.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card text-center">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <h3>Market Analysis</h3>
+                    <p class="text-muted">In-depth market research and property valuation to help you understand current trends and opportunities.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{% url 'core:services' %}" class="btn btn-primary btn-lg">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Why Choose EstatePro</h2>
+            <p class="lead text-muted">Experience the difference of working with true professionals</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-3 col-sm-6 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-award fs-1 text-primary"></i>
+                </div>
+                <h4>15+ Years Experience</h4>
+                <p class="text-muted">Proven track record in the real estate industry</p>
+            </div>
+            
+            <div class="col-md-3 col-sm-6 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-people fs-1 text-primary"></i>
+                </div>
+                <h4>Expert Team</h4>
+                <p class="text-muted">Certified and experienced professionals</p>
+            </div>
+            
+            <div class="col-md-3 col-sm-6 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-shield-check fs-1 text-primary"></i>
+                </div>
+                <h4>Trusted Service</h4>
+                <p class="text-muted">100% client satisfaction guarantee</p>
+            </div>
+            
+            <div class="col-md-3 col-sm-6 text-center">
+                <div class="mb-3">
+                    <i class="bi bi-headset fs-1 text-primary"></i>
+                </div>
+                <h4>24/7 Support</h4>
+                <p class="text-muted">Always available when you need us</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+{% if testimonials %}
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="lead text-muted">Real experiences from satisfied clients</p>
+        </div>
+        
+        <div class="row g-4">
+            {% for testimonial in testimonials %}
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= testimonial.rating %}
+                                <i class="bi bi-star-fill"></i>
+                            {% else %}
+                                <i class="bi bi-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="mb-3">"{{ testimonial.content }}"</p>
+                    <div class="d-flex align-items-center">
+                        {% if testimonial.image %}
+                        <img src="{{ testimonial.image.url }}" alt="{{ testimonial.client_name }}" class="rounded-circle me-3" style="width: 50px; height: 50px; object-fit: cover;">
+                        {% else %}
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                            <span class="fw-bold">{{ testimonial.client_name|slice:":1" }}</span>
+                        </div>
+                        {% endif %}
+                        <div>
+                            <h6 class="mb-0">{{ testimonial.client_name }}</h6>
+                            {% if testimonial.client_position %}
+                            <small class="text-muted">{{ testimonial.client_position }}</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-5">
+            <a href="{% url 'core:testimonials' %}" class="btn btn-outline-primary btn-lg">View All Testimonials</a>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- CTA Section -->
+<!-- <section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to Find Your Dream Property?</h2>
+        <p class="lead mb-4">Contact us today and let our experts guide you through every step of your real estate journey.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'core:contact' %}" class="btn btn-primary btn-lg">Contact Us Now</a>
+            <a href="https://wa.me/1234567890" class="btn btn-lg whatsapp-btn" target="_blank">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+</section> -->
+{% endblock %}

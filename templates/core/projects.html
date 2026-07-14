@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Featured Projects - EstatePro{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">Featured Projects</h1>
+        <p class="lead text-muted">Explore our portfolio of successful property developments and sales</p>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="py-5">
+    <div class="container">
+        {% if projects %}
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card card border-0">
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">{{ project.get_project_type_display }}</span>
+                        <h4 class="card-title">{{ project.title }}</h4>
+                        <p class="text-muted mb-3">
+                            <i class="bi bi-geo-alt-fill text-primary"></i> {{ project.location }}
+                        </p>
+                        <p class="card-text">{{ project.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Default Static Projects -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card card border-0">
+                    <img src="{% static 'images/skyline residences.jpg' %}" class="card-img-top" alt="Skyline Residences">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Residential</span>
+                        <h4 class="card-title">Skyline Residences</h4>
+                        <p class="text-muted mb-3">
+                            <i class="bi bi-geo-alt-fill text-primary"></i> Downtown Business District
+                        </p>
+                        <p class="card-text">A prestigious 20-story residential tower featuring 150 luxury apartments with panoramic city views, state-of-the-art amenities, and smart home technology. This landmark development sets new standards for urban living.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card card border-0">
+                    <img src="{% static 'images/metro business.jpg' %}" class="card-img-top" alt="Metro Business Hub">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Commercial</span>
+                        <h4 class="card-title">Metro Business Hub</h4>
+                        <p class="text-muted mb-3">
+                            <i class="bi bi-geo-alt-fill text-primary"></i> Central Business Park
+                        </p>
+                        <p class="card-text">A premier commercial complex offering 50,000 sq ft of Grade A office space with modern facilities, ample parking, and excellent connectivity. Perfect for businesses seeking a prestigious address.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card card border-0">
+                    <img src="{% static 'images/green valley estates.jpg' %}" class="card-img-top" alt="Green Valley Estates">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Residential</span>
+                        <h4 class="card-title">Green Valley Estates</h4>
+                        <p class="text-muted mb-3">
+                            <i class="bi bi-geo-alt-fill text-primary"></i> Suburban Hills
+                        </p>
+                        <p class="card-text">An exclusive gated community featuring 75 luxury villas with private gardens, clubhouse, swimming pool, and 24/7 security. Designed for families seeking tranquility without compromising on modern conveniences.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Project Stats Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Our Track Record</h2>
+            <p class="lead text-muted">Numbers that speak for themselves</p>
+        </div>
+        
+        <div class="row text-center g-4">
+            <div class="col-md-3 col-6">
+                <i class="bi bi-building fs-1 text-primary mb-3"></i>
+                <h3 class="fw-bold">120+</h3>
+                <p class="text-muted">Projects Completed</p>
+            </div>
+            <div class="col-md-3 col-6">
+                <i class="bi bi-rulers fs-1 text-primary mb-3"></i>
+                <h3 class="fw-bold">2M+</h3>
+                <p class="text-muted">Sq Ft Developed</p>
+            </div>
+            <div class="col-md-3 col-6">
+                <i class="bi bi-people fs-1 text-primary mb-3"></i>
+                <h3 class="fw-bold">800+</h3>
+                <p class="text-muted">Families Served</p>
+            </div>
+            <div class="col-md-3 col-6">
+                <i class="bi bi-star-fill fs-1 text-primary mb-3"></i>
+                <h3 class="fw-bold">4.9/5</h3>
+                <p class="text-muted">Client Rating</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Interested in Our Projects?</h2>
+        <p class="lead mb-4">Contact us to learn more about current and upcoming developments, or to discuss how we can help with your property needs.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'core:contact' %}" class="btn btn-primary btn-lg">Get in Touch</a>
+            <a href="{% url 'core:services' %}" class="btn btn-outline-primary btn-lg">View Our Services</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

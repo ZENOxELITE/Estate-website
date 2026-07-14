@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Client Testimonials - EstatePro{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">Client Testimonials</h1>
+        <p class="lead text-muted">Hear what our satisfied clients have to say about their experience with us</p>
+    </div>
+</section>
+
+<!-- Testimonials Grid -->
+<section class="py-5">
+    <div class="container">
+        {% if testimonials %}
+        <div class="row g-4">
+            {% for testimonial in testimonials %}
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= testimonial.rating %}
+                                <i class="bi bi-star-fill"></i>
+                            {% else %}
+                                <i class="bi bi-star"></i>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="mb-4">"{{ testimonial.content }}"</p>
+                    <div class="d-flex align-items-center">
+                        {% if testimonial.image %}
+                        <img src="{{ testimonial.image.url }}" alt="{{ testimonial.client_name }}" class="rounded-circle me-3" style="width: 60px; height: 60px; object-fit: cover;">
+                        {% else %}
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">{{ testimonial.client_name|slice:":1" }}</span>
+                        </div>
+                        {% endif %}
+                        <div>
+                            <h6 class="mb-0 fw-bold">{{ testimonial.client_name }}</h6>
+                            {% if testimonial.client_position %}
+                            <small class="text-muted">{{ testimonial.client_position }}</small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Default Static Testimonials -->
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"EstatePro made buying our first home an absolute breeze. Their team was professional, knowledgeable, and always available to answer our questions. We couldn't be happier with the service we received!"</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">S</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Sarah Johnson</h6>
+                            <small class="text-muted">Homeowner</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"Outstanding service! They helped us sell our property above asking price and handled all the documentation seamlessly. Their market knowledge is exceptional. Highly recommended!"</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">M</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Michael Chen</h6>
+                            <small class="text-muted">Property Seller</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"We've been using their property management services for three years now. They handle everything professionally, from tenant screening to maintenance. Our rental income has never been more stable."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">R</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Robert Williams</h6>
+                            <small class="text-muted">Property Investor</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"The consultation we received was invaluable for our commercial property investment. Their market analysis and insights helped us make a confident decision that has paid off tremendously."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">E</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Emily Rodriguez</h6>
+                            <small class="text-muted">Business Owner</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"From start to finish, the team at EstatePro was fantastic. They found us the perfect family home in our desired neighborhood and negotiated a great price. True professionals!"</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">D</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">David Anderson</h6>
+                            <small class="text-muted">Homebuyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="testimonial-card">
+                    <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <p class="mb-4">"Their attention to detail and dedication to client satisfaction is remarkable. The documentation process was handled flawlessly, and they kept us informed every step of the way."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                            <span class="fw-bold fs-5">L</span>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Lisa Thompson</h6>
+                            <small class="text-muted">First-time Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <h2 class="display-4 fw-bold">98%</h2>
+                <p class="lead">Client Satisfaction Rate</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="display-4 fw-bold">4.9/5</h2>
+                <p class="lead">Average Client Rating</p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="display-4 fw-bold">1000+</h2>
+                <p class="lead">Happy Clients Served</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Ready to Experience Excellence?</h2>
+        <p class="lead mb-4">Join our growing list of satisfied clients and let us help you achieve your real estate goals.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'core:contact' %}" class="btn btn-primary btn-lg">Contact Us Today</a>
+            <a href="{% url 'core:services' %}" class="btn btn-outline-primary btn-lg">View Our Services</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

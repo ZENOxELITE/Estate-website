@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Services - EstatePro{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">Our Services</h1>
+        <p class="lead text-muted">Comprehensive real estate solutions tailored to your needs</p>
+    </div>
+</section>
+
+<!-- Services Detail Section -->
+<section class="py-5">
+    <div class="container">
+        <!-- Property Buying -->
+        <div class="row align-items-center g-5 mb-5 pb-5 border-bottom">
+            <div class="col-lg-6">
+                <img src="{% static 'images/property buying.jpg' %}" alt="Property Buying" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6">
+                <div class="service-card border-0 shadow-none p-0">
+                    <i class="bi bi-house-check"></i>
+                    <h2 class="mb-3">Property Buying Assistance</h2>
+                    <p class="lead text-muted">Find your perfect property with expert guidance</p>
+                    <p>Our property buying service is designed to make your home search effortless and enjoyable. We provide comprehensive support throughout the entire purchasing process.</p>
+                    
+                    <h5 class="mt-4 mb-3">What We Offer:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Personalized property search based on your requirements</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Market analysis and property valuation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Negotiation support to get the best deal</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Property inspection coordination</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Legal documentation assistance</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Financing and mortgage guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Property Selling -->
+        <div class="row align-items-center g-5 mb-5 pb-5 border-bottom">
+            <div class="col-lg-6 order-lg-2">
+                <img src="{% static 'images/property Selling support.jpg' %}" alt="Property Selling" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="service-card border-0 shadow-none p-0">
+                    <i class="bi bi-cash-coin"></i>
+                    <h2 class="mb-3">Property Selling Support</h2>
+                    <p class="lead text-muted">Maximize your property's value with our proven strategies</p>
+                    <p>Selling a property can be complex, but with our expertise, you'll achieve the best possible outcome. We handle every aspect of the sale from marketing to closing.</p>
+                    
+                    <h5 class="mt-4 mb-3">What We Offer:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Professional property valuation and pricing strategy</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> High-quality photography and virtual tours</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Multi-channel marketing campaigns</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Property staging consultation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Buyer screening and showing coordination</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Expert negotiation and closing support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rental Management -->
+        <div class="row align-items-center g-5 mb-5 pb-5 border-bottom">
+            <div class="col-lg-6">
+                <img src="{% static 'images/rent.jpg' %}" alt="Rental Management" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6">
+                <div class="service-card border-0 shadow-none p-0">
+                    <i class="bi bi-key"></i>
+                    <h2 class="mb-3">Rental Management</h2>
+                    <p class="lead text-muted">Hassle-free property management for landlords</p>
+                    <p>Let us handle the day-to-day management of your rental property while you enjoy consistent returns. Our comprehensive service covers all aspects of property management.</p>
+                    
+                    <h5 class="mt-4 mb-3">What We Offer:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Tenant screening and background checks</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Rent collection and financial reporting</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Property maintenance and repairs coordination</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Lease agreement preparation and renewal</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Regular property inspections</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> 24/7 emergency response</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation Services -->
+        <div class="row align-items-center g-5 mb-5 pb-5 border-bottom">
+            <div class="col-lg-6 order-lg-2">
+                <img src="{% static 'images/documentation.jpg' %}" alt="Documentation Services" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="service-card border-0 shadow-none p-0">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <h2 class="mb-3">Documentation Services</h2>
+                    <p class="lead text-muted">Complete legal and administrative support</p>
+                    <p>Navigate the complexities of real estate documentation with confidence. We ensure all paperwork is accurate, compliant, and processed efficiently.</p>
+                    
+                    <h5 class="mt-4 mb-3">What We Offer:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Purchase and sale agreement preparation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Title deed verification and transfer</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Lease agreement drafting</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Legal compliance checks</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Government registration assistance</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Documentation filing and tracking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consultation Services -->
+        <div class="row align-items-center g-5 mb-5 pb-5 border-bottom">
+            <div class="col-lg-6">
+                <img src="{% static 'images/consultation.jpg' %}" alt="Consultation Services" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6">
+                <div class="service-card border-0 shadow-none p-0">
+                    <i class="bi bi-chat-dots"></i>
+                    <h2 class="mb-3">Real Estate Consultation</h2>
+                    <p class="lead text-muted">Expert advice for informed decision-making</p>
+                    <p>Make confident real estate decisions with professional guidance from our experienced consultants. We provide strategic insights tailored to your goals.</p>
+                    
+                    <h5 class="mt-4 mb-3">What We Offer:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Investment opportunity analysis</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Market trends and forecasting</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Property portfolio management advice</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Development and renovation consultation</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Tax and legal implications guidance</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Long-term strategy planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Analysis -->
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 order-lg-2">
+                <img src="{% static 'images/market analysis.jpg' %}" alt="Market Analysis" class="img-fluid shadow">
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="service-card border-0 shadow-none p-0">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <h2 class="mb-3">Market Analysis</h2>
+                    <p class="lead text-muted">Data-driven insights for better decisions</p>
+                    <p>Stay ahead of the market with our comprehensive analysis and research services. We provide the information you need to make smart real estate investments.</p>
+                    
+                    <h5 class="mt-4 mb-3">What We Offer:</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Comparative market analysis (CMA)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Property valuation reports</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Neighborhood and area analysis</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Market trend reports</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Investment ROI projections</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> Custom research for specific needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="mb-4">Need a Customized Solution?</h2>
+        <p class="lead mb-4">Every client is unique. Let's discuss how we can tailor our services to meet your specific needs.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'core:contact' %}" class="btn btn-light btn-lg">Schedule a Consultation</a>
+            <a href="https://wa.me/1234567890" class="btn btn-lg whatsapp-btn" target="_blank">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

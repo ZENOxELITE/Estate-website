@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Frequently Asked Questions - EstatePro{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold mb-3">Frequently Asked Questions</h1>
+        <p class="lead text-muted">Find answers to common questions about our services and the real estate process</p>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5">
+    <div class="container">
+        {% if faq_categories %}
+        <!-- Dynamic FAQ from Database -->
+        {% for category, faqs in faq_categories.items %}
+        <div class="mb-5">
+            <h2 class="section-title mb-4">{{ category|title }}</h2>
+            <div class="accordion" id="accordion{{ category }}">
+                {% for faq in faqs %}
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ category }}{{ forloop.counter }}" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="collapse{{ category }}{{ forloop.counter }}">
+                            {{ faq.question }}
+                        </button>
+                    </h3>
+                    <div id="collapse{{ category }}{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#accordion{{ category }}">
+                        <div class="accordion-body">
+                            {{ faq.answer }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <!-- Default Static FAQ -->
+        
+        <!-- Buying FAQs -->
+        <div class="mb-5">
+            <h2 class="section-title mb-4">Buying Property</h2>
+            <div class="accordion" id="accordionBuying">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#buyingQ1" aria-expanded="true" aria-controls="buyingQ1">
+                            How do I start the home buying process?
+                        </button>
+                    </h3>
+                    <div id="buyingQ1" class="accordion-collapse collapse show" data-bs-parent="#accordionBuying">
+                        <div class="accordion-body">
+                            Start by determining your budget and getting pre-approved for a mortgage. Then, contact our team to discuss your requirements, preferences, and timeline. We'll guide you through property searches, viewings, negotiations, and all the way to closing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buyingQ2" aria-expanded="false" aria-controls="buyingQ2">
+                            What documents do I need to buy a property?
+                        </button>
+                    </h3>
+                    <div id="buyingQ2" class="accordion-collapse collapse" data-bs-parent="#accordionBuying">
+                        <div class="accordion-body">
+                            You'll typically need proof of identity (passport/driver's license), proof of income (pay stubs, tax returns), bank statements, employment verification, credit report, and pre-approval letter from your lender. We'll provide a complete checklist when you start working with us.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buyingQ3" aria-expanded="false" aria-controls="buyingQ3">
+                            How long does it take to buy a property?
+                        </button>
+                    </h3>
+                    <div id="buyingQ3" class="accordion-collapse collapse" data-bs-parent="#accordionBuying">
+                        <div class="accordion-body">
+                            The timeline varies, but typically the entire process takes 30-60 days from offer acceptance to closing. Finding the right property can take anywhere from a few weeks to several months depending on your requirements and market conditions.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#buyingQ4" aria-expanded="false" aria-controls="buyingQ4">
+                            Should I get a home inspection?
+                        </button>
+                    </h3>
+                    <div id="buyingQ4" class="accordion-collapse collapse" data-bs-parent="#accordionBuying">
+                        <div class="accordion-body">
+                            A home inspection is highly recommended to identify any potential issues with the property before you finalize the purchase. It can save you from costly surprises and provides negotiating leverage if problems are found.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selling FAQs -->
+        <div class="mb-5">
+            <h2 class="section-title mb-4">Selling Property</h2>
+            <div class="accordion" id="accordionSelling">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sellingQ1" aria-expanded="false" aria-controls="sellingQ1">
+                            How do you determine my property's value?
+                        </button>
+                    </h3>
+                    <div id="sellingQ1" class="accordion-collapse collapse" data-bs-parent="#accordionSelling">
+                        <div class="accordion-body">
+                            We conduct a comprehensive market analysis comparing your property to recent sales of similar properties in your area. We consider location, size, condition, upgrades, and current market trends to determine the optimal listing price.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sellingQ2" aria-expanded="false" aria-controls="sellingQ2">
+                            What should I do to prepare my home for sale?
+                        </button>
+                    </h3>
+                    <div id="sellingQ2" class="accordion-collapse collapse" data-bs-parent="#accordionSelling">
+                        <div class="accordion-body">
+                            Start with decluttering and deep cleaning. Make necessary repairs, fresh paint, and consider minor upgrades. We provide a detailed staging consultation and can recommend professional stagers if needed. First impressions are crucial!
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sellingQ3" aria-expanded="false" aria-controls="sellingQ3">
+                            How long will it take to sell my property?
+                        </button>
+                    </h3>
+                    <div id="sellingQ3" class="accordion-collapse collapse" data-bs-parent="#accordionSelling">
+                        <div class="accordion-body">
+                            The average time varies by market conditions, location, and price point. Well-priced properties in good condition typically sell within 30-90 days. Our strategic marketing approach helps achieve faster sales at optimal prices.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sellingQ4" aria-expanded="false" aria-controls="sellingQ4">
+                            What are the costs involved in selling?
+                        </button>
+                    </h3>
+                    <div id="sellingQ4" class="accordion-collapse collapse" data-bs-parent="#accordionSelling">
+                        <div class="accordion-body">
+                            Costs typically include real estate commission, closing costs, title insurance, property taxes, and any necessary repairs or staging. We provide a detailed breakdown of expected costs upfront so there are no surprises.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Documentation FAQs -->
+        <div class="mb-5">
+            <h2 class="section-title mb-4">Documentation & Legal</h2>
+            <div class="accordion" id="accordionDocs">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#docsQ1" aria-expanded="false" aria-controls="docsQ1">
+                            What legal documents are required for a property transaction?
+                        </button>
+                    </h3>
+                    <div id="docsQ1" class="accordion-collapse collapse" data-bs-parent="#accordionDocs">
+                        <div class="accordion-body">
+                            Key documents include purchase agreement, title deed, property disclosure forms, home inspection reports, mortgage documents (if applicable), title insurance, and closing documents. We handle all documentation preparation and ensure everything is legally compliant.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#docsQ2" aria-expanded="false" aria-controls="docsQ2">
+                            How do you ensure all paperwork is accurate?
+                        </button>
+                    </h3>
+                    <div id="docsQ2" class="accordion-collapse collapse" data-bs-parent="#accordionDocs">
+                        <div class="accordion-body">
+                            Our experienced team carefully reviews all documents for accuracy and completeness. We work with qualified attorneys and title companies, and we maintain detailed checklists to ensure nothing is missed. Every document is verified before signing.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#docsQ3" aria-expanded="false" aria-controls="docsQ3">
+                            What is title insurance and do I need it?
+                        </button>
+                    </h3>
+                    <div id="docsQ3" class="accordion-collapse collapse" data-bs-parent="#accordionDocs">
+                        <div class="accordion-body">
+                            Title insurance protects you from potential ownership disputes, liens, or claims against the property. While not always legally required, it's highly recommended to protect your investment. Most lenders require it for mortgage loans.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- General FAQs -->
+        <div class="mb-5">
+            <h2 class="section-title mb-4">General Questions</h2>
+            <div class="accordion" id="accordionGeneral">
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalQ1" aria-expanded="false" aria-controls="generalQ1">
+                            What areas do you serve?
+                        </button>
+                    </h3>
+                    <div id="generalQ1" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                        <div class="accordion-body">
+                            We primarily serve the greater metropolitan area and surrounding suburbs. However, we have a network of trusted partners that allows us to assist clients in other regions as well. Contact us to discuss your specific location needs.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalQ2" aria-expanded="false" aria-controls="generalQ2">
+                            How do your fees work?
+                        </button>
+                    </h3>
+                    <div id="generalQ2" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                        <div class="accordion-body">
+                            Our fee structure varies depending on the service. For buying and selling, we typically work on commission. For property management and consultation, we offer various pricing models. We always provide transparent pricing upfront with no hidden fees.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalQ3" aria-expanded="false" aria-controls="generalQ3">
+                            Can I schedule a consultation?
+                        </button>
+                    </h3>
+                    <div id="generalQ3" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                        <div class="accordion-body">
+                            We offer free initial consultations to discuss your real estate needs and goals. You can schedule an appointment through our contact page, call us directly, or message us on WhatsApp. We're happy to meet at your convenience.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#generalQ4" aria-expanded="false" aria-controls="generalQ4">
+                            Do you work with first-time buyers?
+                        </button>
+                    </h3>
+                    <div id="generalQ4" class="accordion-collapse collapse" data-bs-parent="#accordionGeneral">
+                        <div class="accordion-body">
+                            Yes! We love working with first-time buyers and have extensive experience guiding them through the process. We provide extra education and support to ensure you understand each step and feel confident in your decisions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Still Have Questions Section -->
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="mb-4">Still Have Questions?</h2>
+        <p class="lead mb-4">We're here to help! Contact us for personalized answers to your real estate questions.</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="{% url 'core:contact' %}" class="btn btn-primary btn-lg">Contact Us</a>
+            <a href="https://wa.me/1234567890" class="btn whatsapp-btn btn-lg" target="_blank">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
